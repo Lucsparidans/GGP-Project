@@ -1,0 +1,628 @@
+LOG 1641913909573 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913909574 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 19 more
+LOG 1641913909575 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 19 more
+LOG 1641913918155 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913918156 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 20 more
+LOG 1641913918157 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 20 more
+LOG 1641913928161 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913928162 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 17 more
+LOG 1641913928162 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1288)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 17 more
+LOG 1641913938222 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913938223 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913938223 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913948227 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913948228 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913948229 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913958224 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913958225 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913958226 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913968227 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913968228 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913968228 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913978230 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913978231 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913978231 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913988233 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913988234 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913988235 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913998236 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641913998237 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641913998238 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914008239 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641914008240 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914008240 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914018248 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641914018248 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914018249 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914028251 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641914028252 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914028253 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914038254 [L9]: <ERR> (in MoveSelector) AdaptivePlayoutMoveSelector - Error creating probability distribution when selecting a move in the playout!
+LOG 1641914038255 [L9]: <ERR> (in GamePlayer) java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more
+LOG 1641914038256 [L9]: <ERR> (in GamePlayer) An unhandled exception ocurred during move selection: org.ggp.base.player.gamer.exception.MoveSelectionException: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:285)
+	at org.ggp.base.player.request.grammar.PlayRequest.process(PlayRequest.java:49)
+	at org.ggp.base.player.GamePlayer.run(GamePlayer.java:162)
+Caused by: java.lang.RuntimeException: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:93)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveForRole(GibbsAdaptivePlayoutMoveSelector.java:63)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.getMoveForRole(StandardPlayout.java:179)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.PlayoutStrategy.getJointMove(PlayoutStrategy.java:95)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.MovesAndSiblingsMemorizingStandardPlayout.singlePlayout(MovesAndSiblingsMemorizingStandardPlayout.java:79)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.StandardPlayout.playout(StandardPlayout.java:90)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.searchNext(HybridMctsManager.java:1245)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.performSearch(HybridMctsManager.java:857)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.HybridMctsManager.search(HybridMctsManager.java:774)
+	at org.ggp.base.player.gamer.statemachine.MCTS.MctsGamer.stateMachineSelectMove(MctsGamer.java:256)
+	at org.ggp.base.player.gamer.statemachine.StateMachineGamer.selectMove(StateMachineGamer.java:280)
+	... 2 more
+Caused by: org.apache.commons.math3.exception.NotANumberException: NaN is not allowed
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:134)
+	at org.apache.commons.math3.distribution.EnumeratedDistribution.<init>(EnumeratedDistribution.java:101)
+	at org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.strategies.playout.moveselector.GibbsAdaptivePlayoutMoveSelector.getMoveFromDistribution(GibbsAdaptivePlayoutMoveSelector.java:86)
+	... 12 more

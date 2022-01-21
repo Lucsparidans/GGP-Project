@@ -17,10 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.ThreadContext;
 import org.ggp.base.player.gamer.statemachine.ConfigurableStateMachineGamer;
-import org.ggp.base.util.configuration.GamerConfiguration;
 import org.ggp.base.util.game.Game;
 import org.ggp.base.util.game.GameRepository;
-import org.ggp.base.util.game.ManualUpdateLocalGameRepository;
 import org.ggp.base.util.logging.GamerLogger;
 import org.ggp.base.util.reflection.ProjectSearcher;
 import org.ggp.base.util.statemachine.structure.explicit.ExplicitRole;
@@ -121,9 +119,9 @@ public class IndependentTourneyRunner {
 
 		FileReader reader;
 
-		//GameRepository gameRepo = GameRepository.getDefaultRepository();
-    	//GameRepository gameRepo = new ManualUpdateLocalGameRepository("/home/csironi/GAMEREPOS/GGPBase-GameRepo-03022016");
-    	GameRepository gameRepo = new ManualUpdateLocalGameRepository(GamerConfiguration.defaultLocalGameRepositoryFolderPath + "/" + GamerConfiguration./*defaultStanfordRepo*/defaultGGPBaseRepo);
+		GameRepository gameRepo = GameRepository.getDefaultRepository();
+//    	GameRepository gameRepo = new ManualUpdateLocalGameRepository("/home/iy353734/GAMEREPOS");
+//		GameRepository gameRepo = new ManualUpdateLocalGameRepository(GamerConfiguration.defaultLocalGameRepositoryFolderPath + "/" + GamerConfiguration./*defaultStanfordRepo*/defaultGGPBaseRepo);
 
 		Game game;
 
@@ -484,14 +482,15 @@ public class IndependentTourneyRunner {
 		// Remeber to change this when the number of settings in the list changes
 		int runNumberIndex = 5;
 
-		//theSettings.add("java");
+		theSettings.add("java");
 		//theSettings.add("/usr/java/jdk1.8.0_131/bin/java"); // To use old java version on go4nature
-		theSettings.add("/usr/java/jdk1.8.0_191-amd64/bin/java"); // To use old java version 8 on goGeneral
-		//theSettings.add("-Xms4096M");
-		//theSettings.add("-Xmx4096M");
+		//theSettings.add("/usr/java/jdk1.8.0_191-amd64/bin/java"); // To use old java version 8 on goGeneral
+		theSettings.add("-Xms4096M");
+		theSettings.add("-Xmx4096M");
 		//theSettings.add("-XX:+HeapDumpOnOutOfMemoryError");
 		theSettings.add("-jar");
-		theSettings.add("IndependentSingleMatchRunner.jar");
+//		theSettings.add("C:\\Users\\lucsp\\git\\GGP-Project\\Experiments\\PC\\IndependentSingleMatchRunner.jar");
+		theSettings.add("C:\\Users\\lucsp\\git\\GGP-Project\\JARS\\IndependentSingleMatchRunner.jar");
 		theSettings.add(ThreadContext.get("LOG_FOLDER"));
 		theSettings.add("" + numSequentialMatches);
 		theSettings.add("" + 0);
@@ -501,6 +500,8 @@ public class IndependentTourneyRunner {
 		theSettings.add("" + pnCreationTime);
 		theSettings.add("" + logOnlyEssentialFiles);
 		theSettings.add("" + unlimitedTimeForExternal);
+
+		System.out.println("Working Directory = " + System.getProperty("user.dir"));
 
 		for(int i = (runNumber*numMatchRunners); i < ((runNumber+1)*numMatchRunners); i++){
 			theSettings.set(runNumberIndex, ""+i);

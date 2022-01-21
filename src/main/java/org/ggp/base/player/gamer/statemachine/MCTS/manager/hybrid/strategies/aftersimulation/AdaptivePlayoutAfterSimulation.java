@@ -60,16 +60,16 @@ public class AdaptivePlayoutAfterSimulation extends AfterSimulationStrategy {
 
 		sharedReferencesCollector.setPpaWeights(ppaWeights);
 
-		this.alpha = gamerSettings.getDoublePropertyValue("AfterSimulationStrategy.alpha");
+		this.alpha = gamerSettings.getDoublePropertyValue("AfterSimulationStrategy" + id + ".alpha");
 
-		this.alphaLoss = gamerSettings.getDoublePropertyValue("AfterSimulationStrategy.alphaLoss");
+		this.alphaLoss = gamerSettings.getDoublePropertyValue("AfterSimulationStrategy" + id + ".alphaLoss");
 
-		this.invert = gamerSettings.getBooleanPropertyValue("AfterSimulationStrategy.invert");
+		this.invert = gamerSettings.getBooleanPropertyValue("AfterSimulationStrategy" + id + ".invert");
 
-		this.alphaDiscount = gamerSettings.getDoublePropertyValue("AfterSimulationStrategy.alphaDiscount");
+		this.alphaDiscount = gamerSettings.getDoublePropertyValue("AfterSimulationStrategy" + id + ".alphaDiscount");
 
 		//if(gamerSettings.specifiesProperty("AfterSimulationStrategy.updateType")){
-			String updateTypeString = gamerSettings.getPropertyValue("AfterSimulationStrategy.updateType");
+			String updateTypeString = gamerSettings.getPropertyValue("AfterSimulationStrategy" + id + ".updateType");
 			switch(updateTypeString.toLowerCase()){
 				case "scores":
 					this.updateType = PLAYOUT_STAT_UPDATE_TYPE.SCORES;

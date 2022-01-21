@@ -238,7 +238,7 @@ public class MctsGamer extends InternalPropnetGamer {
 		if((!this.metagameSearch) || this.gameStep > 1){ // For game step 1 is the metagame method that calls the before-move-actions
 			this.mctsManager.beforeMoveActions(this.gameStep, false, this.getInternalLastJointMove());
 		}
-
+		System.out.println("Move request");
 		if(System.currentTimeMillis() < realTimeout){
 
 			GamerLogger.log("Gamer", "Selecting move using MCTS.");

@@ -6,6 +6,7 @@ import java.util.Random;
 import org.ggp.base.player.gamer.statemachine.GamerSettings;
 import org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.GameDependentParameters;
 import org.ggp.base.player.gamer.statemachine.MCTS.manager.hybrid.SharedReferencesCollector;
+import org.ggp.base.player.gamer.statemachine.MCTS.manager.parameterstuning.structure.parameters.TunableParameter;
 import org.ggp.base.player.gamer.statemachine.MCTS.manager.structures.NGramTreeNode;
 import org.ggp.base.player.gamer.statemachine.MCTS.manager.structures.PpaInfo;
 import org.ggp.base.player.gamer.statemachine.MCTS.manager.treestructure.MctsNode;
@@ -29,7 +30,7 @@ public class NppaMoveSelector extends MoveSelector {
 	 */
 	protected List<NGramTreeNode<PpaInfo>> nppaStatistics;
 
-	protected int minNGramVisits;
+	protected TunableParameter minNGramVisits;
 
 	private double nppaFpu;
 
@@ -37,7 +38,7 @@ public class NppaMoveSelector extends MoveSelector {
 			GamerSettings gamerSettings, SharedReferencesCollector sharedReferencesCollector) {
 		super(gameDependentParameters, random, gamerSettings, sharedReferencesCollector);
 
-		this.minNGramVisits = gamerSettings.getIntPropertyValue("MoveSelector.minNGramVisits");
+		this.minNGramVisits = this.createTunableParameter("MoveSelector", "MinNGramVisits", gamerSettings, sharedReferencesCollector);
 
 		this.nppaFpu = gamerSettings.getDoublePropertyValue("MoveSelector.nppaFpu");
 
@@ -55,12 +56,14 @@ public class NppaMoveSelector extends MoveSelector {
 	@Override
 	public void clearComponent() {
 		// TODO Auto-generated method stub
+		this.minNGramVisits.clearParameter();
 
 	}
 
 	@Override
 	public void setUpComponent() {
 		// TODO Auto-generated method stub
+		this.minNGramVisits.setUpParameter(this.gameDependentParameters.getNumRoles());
 
 	}
 
@@ -92,7 +95,7 @@ public class NppaMoveSelector extends MoveSelector {
 		Move currentMove = this.currentSimulationJointMoves.get(currentMoveIndex).getJointMove().get(currentRoleIndex);
 		nGramTreeNode = nGramTreeNode.getNextMoveNode(currentMove);
 
-		while(nGramTreeNode != null && nGramTreeNode.getStatistic().getVisits() >= this.minNGramVisits){ // If the m-gram does not have enough visits we can stop because the (m+1)-gram will also not have enough visits
+		while(nGramTreeNode != null && nGramTreeNode.getStatistic().getVisits() >= this.minNGramVisits.getValuePerRole(currentRoleIndex)){ // If the m-gram does not have enough visits we can stop because the (m+1)-gram will also not have enough visits
 
 			// Sum the score of the n-gram
 			nGramSum += (nGramTreeNode.getStatistic().getWeight());

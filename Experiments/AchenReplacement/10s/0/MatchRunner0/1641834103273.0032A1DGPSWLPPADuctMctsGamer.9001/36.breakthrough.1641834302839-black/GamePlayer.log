@@ -1,0 +1,196 @@
+LOG 1641834303029 [L3]: Started match logging at: Mon Jan 10 18:05:03 CET 2022
+LOG 1641834303037 [L3]: Game rules: [( role white ), ( role black ), ( <= ( base ( cellHolds ?x ?y ?p ) ) ( index ?x ) ( index ?y ) ( role ?p ) ), ( <= ( base ( control ?p ) ) ( role ?p ) ), ( <= ( input ?p noop ) ( role ?p ) ), ( <= ( input white ( move ?x ?y1 ?x ?y2 ) ) ( index ?x ) ( succ ?y1 ?y2 ) ), ( <= ( input white ( move ?x1 ?y1 ?x2 ?y2 ) ) ( succ ?y1 ?y2 ) ( succ ?x1 ?x2 ) ), ( <= ( input white ( move ?x1 ?y1 ?x2 ?y2 ) ) ( succ ?y1 ?y2 ) ( succ ?x2 ?x1 ) ), ( <= ( input black ( move ?x ?y1 ?x ?y2 ) ) ( index ?x ) ( succ ?y2 ?y1 ) ), ( <= ( input black ( move ?x1 ?y1 ?x2 ?y2 ) ) ( succ ?y2 ?y1 ) ( succ ?x1 ?x2 ) ), ( <= ( input black ( move ?x1 ?y1 ?x2 ?y2 ) ) ( succ ?y2 ?y1 ) ( succ ?x2 ?x1 ) ), ( init ( cellHolds 1 1 white ) ), ( init ( cellHolds 2 1 white ) ), ( init ( cellHolds 3 1 white ) ), ( init ( cellHolds 4 1 white ) ), ( init ( cellHolds 5 1 white ) ), ( init ( cellHolds 6 1 white ) ), ( init ( cellHolds 7 1 white ) ), ( init ( cellHolds 8 1 white ) ), ( init ( cellHolds 1 2 white ) ), ( init ( cellHolds 2 2 white ) ), ( init ( cellHolds 3 2 white ) ), ( init ( cellHolds 4 2 white ) ), ( init ( cellHolds 5 2 white ) ), ( init ( cellHolds 6 2 white ) ), ( init ( cellHolds 7 2 white ) ), ( init ( cellHolds 8 2 white ) ), ( init ( cellHolds 1 7 black ) ), ( init ( cellHolds 2 7 black ) ), ( init ( cellHolds 3 7 black ) ), ( init ( cellHolds 4 7 black ) ), ( init ( cellHolds 5 7 black ) ), ( init ( cellHolds 6 7 black ) ), ( init ( cellHolds 7 7 black ) ), ( init ( cellHolds 8 7 black ) ), ( init ( cellHolds 1 8 black ) ), ( init ( cellHolds 2 8 black ) ), ( init ( cellHolds 3 8 black ) ), ( init ( cellHolds 4 8 black ) ), ( init ( cellHolds 5 8 black ) ), ( init ( cellHolds 6 8 black ) ), ( init ( cellHolds 7 8 black ) ), ( init ( cellHolds 8 8 black ) ), ( init ( control white ) ), ( <= ( legal white ( move ?x ?y1 ?x ?y2 ) ) ( true ( control white ) ) ( true ( cellHolds ?x ?y1 white ) ) ( succ ?y1 ?y2 ) ( cellEmpty ?x ?y2 ) ), ( <= ( legal white ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control white ) ) ( true ( cellHolds ?x1 ?y1 white ) ) ( succ ?y1 ?y2 ) ( succ ?x1 ?x2 ) ( not ( true ( cellHolds ?x2 ?y2 white ) ) ) ), ( <= ( legal white ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control white ) ) ( true ( cellHolds ?x1 ?y1 white ) ) ( succ ?y1 ?y2 ) ( succ ?x2 ?x1 ) ( not ( true ( cellHolds ?x2 ?y2 white ) ) ) ), ( <= ( legal black ( move ?x ?y1 ?x ?y2 ) ) ( true ( control black ) ) ( true ( cellHolds ?x ?y1 black ) ) ( succ ?y2 ?y1 ) ( cellEmpty ?x ?y2 ) ), ( <= ( legal black ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control black ) ) ( true ( cellHolds ?x1 ?y1 black ) ) ( succ ?y2 ?y1 ) ( succ ?x1 ?x2 ) ( not ( true ( cellHolds ?x2 ?y2 black ) ) ) ), ( <= ( legal black ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control black ) ) ( true ( cellHolds ?x1 ?y1 black ) ) ( succ ?y2 ?y1 ) ( succ ?x2 ?x1 ) ( not ( true ( cellHolds ?x2 ?y2 black ) ) ) ), ( <= ( legal white noop ) ( true ( control black ) ) ), ( <= ( legal black noop ) ( true ( control white ) ) ), ( <= ( next ( cellHolds ?x2 ?y2 ?player ) ) ( role ?player ) ( does ?player ( move ?x1 ?y1 ?x2 ?y2 ) ) ), ( <= ( next ( cellHolds ?x3 ?y3 ?state ) ) ( true ( cellHolds ?x3 ?y3 ?state ) ) ( role ?player ) ( does ?player ( move ?x1 ?y1 ?x2 ?y2 ) ) ( distinctCell ?x1 ?y1 ?x3 ?y3 ) ( distinctCell ?x2 ?y2 ?x3 ?y3 ) ), ( <= ( next ( control white ) ) ( true ( control black ) ) ), ( <= ( next ( control black ) ) ( true ( control white ) ) ), ( <= terminal whiteWin ), ( <= terminal blackWin ), ( <= ( goal white 100 ) whiteWin ), ( <= ( goal white 0 ) ( not whiteWin ) ), ( <= ( goal black 100 ) blackWin ), ( <= ( goal black 0 ) ( not blackWin ) ), ( <= ( cell ?x ?y ) ( index ?x ) ( index ?y ) ), ( <= ( cellEmpty ?x ?y ) ( cell ?x ?y ) ( not ( true ( cellHolds ?x ?y white ) ) ) ( not ( true ( cellHolds ?x ?y black ) ) ) ), ( <= ( distinctCell ?x1 ?y1 ?x2 ?y2 ) ( cell ?x1 ?y1 ) ( cell ?x2 ?y2 ) ( distinct ?x1 ?x2 ) ), ( <= ( distinctCell ?x1 ?y1 ?x2 ?y2 ) ( cell ?x1 ?y1 ) ( cell ?x2 ?y2 ) ( distinct ?y1 ?y2 ) ), ( <= whiteWin ( index ?x ) ( true ( cellHolds ?x 8 white ) ) ), ( <= blackWin ( index ?x ) ( true ( cellHolds ?x 1 black ) ) ), ( <= whiteWin ( not blackCell ) ), ( <= blackWin ( not whiteCell ) ), ( <= whiteCell ( cell ?x ?y ) ( true ( cellHolds ?x ?y white ) ) ), ( <= blackCell ( cell ?x ?y ) ( true ( cellHolds ?x ?y black ) ) ), ( index 1 ), ( index 2 ), ( index 3 ), ( index 4 ), ( index 5 ), ( index 6 ), ( index 7 ), ( index 8 ), ( succ 1 2 ), ( succ 2 3 ), ( succ 3 4 ), ( succ 4 5 ), ( succ 5 6 ), ( succ 6 7 ), ( succ 7 8 )]
+LOG 1641834303037 [L3]: Start clock: 15
+LOG 1641834303038 [L3]: Play clock: 10
+LOG 1641834308030 [L0]: [Sent at 1641834308030] ready
+LOG 1641834308033 [L0]: [Received at 1641834308033] ( PLAY 36.breakthrough.1641834302839 NIL )
+LOG 1641834308034 [L0]: [Sent at 1641834308034] noop
+LOG 1641834308037 [L0]: [Received at 1641834308037] ( PLAY 36.breakthrough.1641834302839 (( move 6 2 7 3 ) noop ) )
+LOG 1641834308039 [L0]: [Sent at 1641834308039] ( move 8 7 7 6 )
+LOG 1641834308042 [L0]: [Received at 1641834308042] ( PLAY 36.breakthrough.1641834302839 (noop ( move 8 7 7 6 ) ) )
+LOG 1641834308051 [L0]: [Sent at 1641834308051] noop
+LOG 1641834308053 [L0]: [Received at 1641834308053] ( PLAY 36.breakthrough.1641834302839 (( move 7 1 6 2 ) noop ) )
+LOG 1641834308057 [L0]: [Sent at 1641834308057] ( move 2 7 1 6 )
+LOG 1641834308059 [L0]: [Received at 1641834308059] ( PLAY 36.breakthrough.1641834302839 (noop ( move 2 7 1 6 ) ) )
+LOG 1641834308060 [L0]: [Sent at 1641834308060] noop
+LOG 1641834308063 [L0]: [Received at 1641834308063] ( PLAY 36.breakthrough.1641834302839 (( move 4 2 5 3 ) noop ) )
+LOG 1641834308065 [L0]: [Sent at 1641834308065] ( move 5 7 5 6 )
+LOG 1641834308068 [L0]: [Received at 1641834308068] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 7 5 6 ) ) )
+LOG 1641834308069 [L0]: [Sent at 1641834308069] noop
+LOG 1641834308072 [L0]: [Received at 1641834308072] ( PLAY 36.breakthrough.1641834302839 (( move 7 2 8 3 ) noop ) )
+LOG 1641834308073 [L0]: [Sent at 1641834308073] ( move 1 8 2 7 )
+LOG 1641834308076 [L0]: [Received at 1641834308076] ( PLAY 36.breakthrough.1641834302839 (noop ( move 1 8 2 7 ) ) )
+LOG 1641834308077 [L0]: [Sent at 1641834308077] noop
+LOG 1641834308080 [L0]: [Received at 1641834308080] ( PLAY 36.breakthrough.1641834302839 (( move 2 2 2 3 ) noop ) )
+LOG 1641834308081 [L0]: [Sent at 1641834308081] ( move 2 7 3 6 )
+LOG 1641834308084 [L0]: [Received at 1641834308084] ( PLAY 36.breakthrough.1641834302839 (noop ( move 2 7 3 6 ) ) )
+LOG 1641834308085 [L0]: [Sent at 1641834308085] noop
+LOG 1641834308089 [L0]: [Received at 1641834308089] ( PLAY 36.breakthrough.1641834302839 (( move 2 3 1 4 ) noop ) )
+LOG 1641834308090 [L0]: [Sent at 1641834308090] ( move 1 6 1 5 )
+LOG 1641834308093 [L0]: [Received at 1641834308093] ( PLAY 36.breakthrough.1641834302839 (noop ( move 1 6 1 5 ) ) )
+LOG 1641834308094 [L0]: [Sent at 1641834308094] noop
+LOG 1641834308097 [L0]: [Received at 1641834308097] ( PLAY 36.breakthrough.1641834302839 (( move 1 1 2 2 ) noop ) )
+LOG 1641834308098 [L0]: [Sent at 1641834308098] ( move 7 6 8 5 )
+LOG 1641834308102 [L0]: [Received at 1641834308102] ( PLAY 36.breakthrough.1641834302839 (noop ( move 7 6 8 5 ) ) )
+LOG 1641834308103 [L0]: [Sent at 1641834308103] noop
+LOG 1641834308106 [L0]: [Received at 1641834308106] ( PLAY 36.breakthrough.1641834302839 (( move 6 1 7 2 ) noop ) )
+LOG 1641834308107 [L0]: [Sent at 1641834308107] ( move 7 8 8 7 )
+LOG 1641834308110 [L0]: [Received at 1641834308110] ( PLAY 36.breakthrough.1641834302839 (noop ( move 7 8 8 7 ) ) )
+LOG 1641834308111 [L0]: [Sent at 1641834308111] noop
+LOG 1641834308114 [L0]: [Received at 1641834308114] ( PLAY 36.breakthrough.1641834302839 (( move 5 3 4 4 ) noop ) )
+LOG 1641834308115 [L0]: [Sent at 1641834308115] ( move 6 7 6 6 )
+LOG 1641834308119 [L0]: [Received at 1641834308119] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 7 6 6 ) ) )
+LOG 1641834308121 [L0]: [Sent at 1641834308121] noop
+LOG 1641834308123 [L0]: [Received at 1641834308123] ( PLAY 36.breakthrough.1641834302839 (( move 1 2 2 3 ) noop ) )
+LOG 1641834308125 [L0]: [Sent at 1641834308125] ( move 4 8 5 7 )
+LOG 1641834308127 [L0]: [Received at 1641834308127] ( PLAY 36.breakthrough.1641834302839 (noop ( move 4 8 5 7 ) ) )
+LOG 1641834308128 [L0]: [Sent at 1641834308128] noop
+LOG 1641834308131 [L0]: [Received at 1641834308131] ( PLAY 36.breakthrough.1641834302839 (( move 6 2 6 3 ) noop ) )
+LOG 1641834308132 [L0]: [Sent at 1641834308132] ( move 3 8 2 7 )
+LOG 1641834308135 [L0]: [Received at 1641834308135] ( PLAY 36.breakthrough.1641834302839 (noop ( move 3 8 2 7 ) ) )
+LOG 1641834308136 [L0]: [Sent at 1641834308136] noop
+LOG 1641834308140 [L0]: [Received at 1641834308140] ( PLAY 36.breakthrough.1641834302839 (( move 7 3 6 4 ) noop ) )
+LOG 1641834308141 [L0]: [Sent at 1641834308141] ( move 8 5 8 4 )
+LOG 1641834308145 [L0]: [Received at 1641834308145] ( PLAY 36.breakthrough.1641834302839 (noop ( move 8 5 8 4 ) ) )
+LOG 1641834308147 [L0]: [Sent at 1641834308147] noop
+LOG 1641834308149 [L0]: [Received at 1641834308149] ( PLAY 36.breakthrough.1641834302839 (( move 4 4 3 5 ) noop ) )
+LOG 1641834308151 [L0]: [Sent at 1641834308151] ( move 7 7 8 6 )
+LOG 1641834308154 [L0]: [Received at 1641834308154] ( PLAY 36.breakthrough.1641834302839 (noop ( move 7 7 8 6 ) ) )
+LOG 1641834308155 [L0]: [Sent at 1641834308155] noop
+LOG 1641834308158 [L0]: [Received at 1641834308158] ( PLAY 36.breakthrough.1641834302839 (( move 3 5 4 6 ) noop ) )
+LOG 1641834308159 [L0]: [Sent at 1641834308159] ( move 3 6 3 5 )
+LOG 1641834308162 [L0]: [Received at 1641834308162] ( PLAY 36.breakthrough.1641834302839 (noop ( move 3 6 3 5 ) ) )
+LOG 1641834308164 [L0]: [Sent at 1641834308164] noop
+LOG 1641834308166 [L0]: [Received at 1641834308166] ( PLAY 36.breakthrough.1641834302839 (( move 4 6 5 7 ) noop ) )
+LOG 1641834308167 [L0]: [Sent at 1641834308167] ( move 1 7 2 6 )
+LOG 1641834308172 [L0]: [Received at 1641834308172] ( PLAY 36.breakthrough.1641834302839 (noop ( move 1 7 2 6 ) ) )
+LOG 1641834308173 [L0]: [Sent at 1641834308173] noop
+LOG 1641834308176 [L0]: [Received at 1641834308176] ( PLAY 36.breakthrough.1641834302839 (( move 3 1 4 2 ) noop ) )
+LOG 1641834308177 [L0]: [Sent at 1641834308177] ( move 5 6 5 5 )
+LOG 1641834308180 [L0]: [Received at 1641834308180] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 6 5 5 ) ) )
+LOG 1641834308181 [L0]: [Sent at 1641834308181] noop
+LOG 1641834308185 [L0]: [Received at 1641834308185] ( PLAY 36.breakthrough.1641834302839 (( move 4 2 3 3 ) noop ) )
+LOG 1641834308187 [L0]: [Sent at 1641834308187] ( move 8 6 8 5 )
+LOG 1641834308197 [L0]: [Received at 1641834308197] ( PLAY 36.breakthrough.1641834302839 (noop ( move 8 6 8 5 ) ) )
+LOG 1641834308198 [L0]: [Sent at 1641834308198] noop
+LOG 1641834308201 [L0]: [Received at 1641834308201] ( PLAY 36.breakthrough.1641834302839 (( move 6 3 5 4 ) noop ) )
+LOG 1641834308202 [L0]: [Sent at 1641834308202] ( move 8 7 7 6 )
+LOG 1641834308205 [L0]: [Received at 1641834308205] ( PLAY 36.breakthrough.1641834302839 (noop ( move 8 7 7 6 ) ) )
+LOG 1641834308206 [L0]: [Sent at 1641834308206] noop
+LOG 1641834308209 [L0]: [Received at 1641834308209] ( PLAY 36.breakthrough.1641834302839 (( move 1 4 2 5 ) noop ) )
+LOG 1641834308210 [L0]: [Sent at 1641834308210] ( move 3 5 4 4 )
+LOG 1641834308214 [L0]: [Received at 1641834308214] ( PLAY 36.breakthrough.1641834302839 (noop ( move 3 5 4 4 ) ) )
+LOG 1641834308215 [L0]: [Sent at 1641834308215] noop
+LOG 1641834308217 [L0]: [Received at 1641834308217] ( PLAY 36.breakthrough.1641834302839 (( move 7 2 6 3 ) noop ) )
+LOG 1641834308219 [L0]: [Sent at 1641834308219] ( move 5 5 6 4 )
+LOG 1641834308221 [L0]: [Received at 1641834308221] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 5 6 4 ) ) )
+LOG 1641834308222 [L0]: [Sent at 1641834308222] noop
+LOG 1641834308226 [L0]: [Received at 1641834308226] ( PLAY 36.breakthrough.1641834302839 (( move 5 1 4 2 ) noop ) )
+LOG 1641834308227 [L0]: [Sent at 1641834308227] ( move 6 6 7 5 )
+LOG 1641834308230 [L0]: [Received at 1641834308230] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 6 7 5 ) ) )
+LOG 1641834308231 [L0]: [Sent at 1641834308231] noop
+LOG 1641834308234 [L0]: [Received at 1641834308234] ( PLAY 36.breakthrough.1641834302839 (( move 4 2 4 3 ) noop ) )
+LOG 1641834308235 [L0]: [Sent at 1641834308235] ( move 8 8 7 7 )
+LOG 1641834308238 [L0]: [Received at 1641834308238] ( PLAY 36.breakthrough.1641834302839 (noop ( move 8 8 7 7 ) ) )
+LOG 1641834308239 [L0]: [Sent at 1641834308239] noop
+LOG 1641834308242 [L0]: [Received at 1641834308242] ( PLAY 36.breakthrough.1641834302839 (( move 2 3 3 4 ) noop ) )
+LOG 1641834308243 [L0]: [Sent at 1641834308243] ( move 4 7 5 6 )
+LOG 1641834308246 [L0]: [Received at 1641834308246] ( PLAY 36.breakthrough.1641834302839 (noop ( move 4 7 5 6 ) ) )
+LOG 1641834308247 [L0]: [Sent at 1641834308247] noop
+LOG 1641834308250 [L0]: [Received at 1641834308250] ( PLAY 36.breakthrough.1641834302839 (( move 6 3 7 4 ) noop ) )
+LOG 1641834308251 [L0]: [Sent at 1641834308251] ( move 5 8 6 7 )
+LOG 1641834308255 [L0]: [Received at 1641834308255] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 8 6 7 ) ) )
+LOG 1641834308256 [L0]: [Sent at 1641834308256] noop
+LOG 1641834308259 [L0]: [Received at 1641834308259] ( PLAY 36.breakthrough.1641834302839 (( move 2 1 1 2 ) noop ) )
+LOG 1641834308260 [L0]: [Sent at 1641834308260] ( move 5 6 5 5 )
+LOG 1641834308263 [L0]: [Received at 1641834308263] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 6 5 5 ) ) )
+LOG 1641834308265 [L0]: [Sent at 1641834308265] noop
+LOG 1641834308267 [L0]: [Received at 1641834308267] ( PLAY 36.breakthrough.1641834302839 (( move 3 3 4 4 ) noop ) )
+LOG 1641834308268 [L0]: [Sent at 1641834308268] ( move 6 4 7 3 )
+LOG 1641834308271 [L0]: [Received at 1641834308271] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 4 7 3 ) ) )
+LOG 1641834308272 [L0]: [Sent at 1641834308272] noop
+LOG 1641834308275 [L0]: [Received at 1641834308275] ( PLAY 36.breakthrough.1641834302839 (( move 2 2 1 3 ) noop ) )
+LOG 1641834308276 [L0]: [Sent at 1641834308276] ( move 7 7 6 6 )
+LOG 1641834308279 [L0]: [Received at 1641834308279] ( PLAY 36.breakthrough.1641834302839 (noop ( move 7 7 6 6 ) ) )
+LOG 1641834308280 [L0]: [Sent at 1641834308280] noop
+LOG 1641834308283 [L0]: [Received at 1641834308283] ( PLAY 36.breakthrough.1641834302839 (( move 3 4 4 5 ) noop ) )
+LOG 1641834308284 [L0]: [Sent at 1641834308284] ( move 7 3 7 2 )
+LOG 1641834308286 [L0]: [Received at 1641834308286] ( PLAY 36.breakthrough.1641834302839 (noop ( move 7 3 7 2 ) ) )
+LOG 1641834308287 [L0]: [Sent at 1641834308287] noop
+LOG 1641834308291 [L0]: [Received at 1641834308291] ( PLAY 36.breakthrough.1641834302839 (( move 5 2 6 3 ) noop ) )
+LOG 1641834308292 [L0]: [Sent at 1641834308292] ( move 6 7 5 6 )
+LOG 1641834308295 [L0]: [Received at 1641834308295] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 7 5 6 ) ) )
+LOG 1641834308296 [L0]: [Sent at 1641834308296] noop
+LOG 1641834308299 [L0]: [Received at 1641834308299] ( PLAY 36.breakthrough.1641834302839 (( move 2 5 1 6 ) noop ) )
+LOG 1641834308300 [L0]: [Sent at 1641834308300] ( move 5 6 4 5 )
+LOG 1641834308302 [L0]: [Received at 1641834308302] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 6 4 5 ) ) )
+LOG 1641834308303 [L0]: [Sent at 1641834308303] noop
+LOG 1641834308306 [L0]: [Received at 1641834308306] ( PLAY 36.breakthrough.1641834302839 (( move 1 2 2 3 ) noop ) )
+LOG 1641834308307 [L0]: [Sent at 1641834308307] ( move 6 8 5 7 )
+LOG 1641834308309 [L0]: [Received at 1641834308309] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 8 5 7 ) ) )
+LOG 1641834308310 [L0]: [Sent at 1641834308310] noop
+LOG 1641834308313 [L0]: [Received at 1641834308313] ( PLAY 36.breakthrough.1641834302839 (( move 1 6 1 7 ) noop ) )
+LOG 1641834308314 [L0]: [Sent at 1641834308314] ( move 1 5 2 4 )
+LOG 1641834308317 [L0]: [Received at 1641834308317] ( PLAY 36.breakthrough.1641834302839 (noop ( move 1 5 2 4 ) ) )
+LOG 1641834308318 [L0]: [Sent at 1641834308318] noop
+LOG 1641834308321 [L0]: [Received at 1641834308321] ( PLAY 36.breakthrough.1641834302839 (( move 7 4 8 5 ) noop ) )
+LOG 1641834308322 [L0]: [Sent at 1641834308322] ( move 2 8 1 7 )
+LOG 1641834308324 [L0]: [Received at 1641834308324] ( PLAY 36.breakthrough.1641834302839 (noop ( move 2 8 1 7 ) ) )
+LOG 1641834308325 [L0]: [Sent at 1641834308325] noop
+LOG 1641834308328 [L0]: [Received at 1641834308328] ( PLAY 36.breakthrough.1641834302839 (( move 5 4 4 5 ) noop ) )
+LOG 1641834308329 [L0]: [Sent at 1641834308329] ( move 3 7 4 6 )
+LOG 1641834308331 [L0]: [Received at 1641834308331] ( PLAY 36.breakthrough.1641834302839 (noop ( move 3 7 4 6 ) ) )
+LOG 1641834308332 [L0]: [Sent at 1641834308332] noop
+LOG 1641834308335 [L0]: [Received at 1641834308335] ( PLAY 36.breakthrough.1641834302839 (( move 4 4 3 5 ) noop ) )
+LOG 1641834308336 [L0]: [Sent at 1641834308336] ( move 5 5 4 4 )
+LOG 1641834308339 [L0]: [Received at 1641834308339] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 5 4 4 ) ) )
+LOG 1641834308340 [L0]: [Sent at 1641834308340] noop
+LOG 1641834308342 [L0]: [Received at 1641834308342] ( PLAY 36.breakthrough.1641834302839 (( move 1 3 2 4 ) noop ) )
+LOG 1641834308343 [L0]: [Sent at 1641834308343] ( move 4 6 5 5 )
+LOG 1641834308345 [L0]: [Received at 1641834308345] ( PLAY 36.breakthrough.1641834302839 (noop ( move 4 6 5 5 ) ) )
+LOG 1641834308346 [L0]: [Sent at 1641834308346] noop
+LOG 1641834308349 [L0]: [Received at 1641834308349] ( PLAY 36.breakthrough.1641834302839 (( move 3 5 3 6 ) noop ) )
+LOG 1641834308350 [L0]: [Sent at 1641834308350] ( move 8 4 7 3 )
+LOG 1641834308352 [L0]: [Received at 1641834308352] ( PLAY 36.breakthrough.1641834302839 (noop ( move 8 4 7 3 ) ) )
+LOG 1641834308353 [L0]: [Sent at 1641834308353] noop
+LOG 1641834308356 [L0]: [Received at 1641834308356] ( PLAY 36.breakthrough.1641834302839 (( move 4 3 5 4 ) noop ) )
+LOG 1641834308357 [L0]: [Sent at 1641834308357] ( move 5 5 6 4 )
+LOG 1641834308360 [L0]: [Received at 1641834308360] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 5 6 4 ) ) )
+LOG 1641834308361 [L0]: [Sent at 1641834308361] noop
+LOG 1641834308363 [L0]: [Received at 1641834308363] ( PLAY 36.breakthrough.1641834302839 (( move 8 2 7 3 ) noop ) )
+LOG 1641834308364 [L0]: [Sent at 1641834308364] ( move 6 6 6 5 )
+LOG 1641834308366 [L0]: [Received at 1641834308366] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 6 6 5 ) ) )
+LOG 1641834308368 [L0]: [Sent at 1641834308368] noop
+LOG 1641834308370 [L0]: [Received at 1641834308370] ( PLAY 36.breakthrough.1641834302839 (( move 8 3 7 4 ) noop ) )
+LOG 1641834308371 [L0]: [Sent at 1641834308371] ( move 5 7 4 6 )
+LOG 1641834308373 [L0]: [Received at 1641834308373] ( PLAY 36.breakthrough.1641834302839 (noop ( move 5 7 4 6 ) ) )
+LOG 1641834308374 [L0]: [Sent at 1641834308374] noop
+LOG 1641834308377 [L0]: [Received at 1641834308377] ( PLAY 36.breakthrough.1641834302839 (( move 8 1 8 2 ) noop ) )
+LOG 1641834308378 [L0]: [Sent at 1641834308378] ( move 6 4 5 3 )
+LOG 1641834308380 [L0]: [Received at 1641834308380] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 4 5 3 ) ) )
+LOG 1641834308382 [L0]: [Sent at 1641834308382] noop
+LOG 1641834308383 [L0]: [Received at 1641834308383] ( PLAY 36.breakthrough.1641834302839 (( move 5 4 5 5 ) noop ) )
+LOG 1641834308385 [L0]: [Sent at 1641834308385] ( move 4 4 3 3 )
+LOG 1641834308388 [L0]: [Received at 1641834308388] ( PLAY 36.breakthrough.1641834302839 (noop ( move 4 4 3 3 ) ) )
+LOG 1641834308389 [L0]: [Sent at 1641834308389] noop
+LOG 1641834308391 [L0]: [Received at 1641834308391] ( PLAY 36.breakthrough.1641834302839 (( move 8 2 8 3 ) noop ) )
+LOG 1641834308392 [L0]: [Sent at 1641834308392] ( move 2 6 3 5 )
+LOG 1641834308396 [L0]: [Received at 1641834308396] ( PLAY 36.breakthrough.1641834302839 (noop ( move 2 6 3 5 ) ) )
+LOG 1641834308397 [L0]: [Sent at 1641834308397] noop
+LOG 1641834308399 [L0]: [Received at 1641834308399] ( PLAY 36.breakthrough.1641834302839 (( move 7 3 6 4 ) noop ) )
+LOG 1641834308400 [L0]: [Sent at 1641834308400] ( move 7 5 6 4 )
+LOG 1641834308402 [L0]: [Received at 1641834308402] ( PLAY 36.breakthrough.1641834302839 (noop ( move 7 5 6 4 ) ) )
+LOG 1641834308403 [L0]: [Sent at 1641834308403] noop
+LOG 1641834308405 [L0]: [Received at 1641834308405] ( PLAY 36.breakthrough.1641834302839 (( move 5 5 6 6 ) noop ) )
+LOG 1641834308407 [L0]: [Sent at 1641834308407] ( move 3 3 4 2 )
+LOG 1641834308409 [L0]: [Received at 1641834308409] ( PLAY 36.breakthrough.1641834302839 (noop ( move 3 3 4 2 ) ) )
+LOG 1641834308410 [L0]: [Sent at 1641834308410] noop
+LOG 1641834308412 [L0]: [Received at 1641834308412] ( PLAY 36.breakthrough.1641834302839 (( move 8 3 8 4 ) noop ) )
+LOG 1641834308413 [L0]: [Sent at 1641834308413] ( move 6 4 7 3 )
+LOG 1641834308415 [L0]: [Received at 1641834308415] ( PLAY 36.breakthrough.1641834302839 (noop ( move 6 4 7 3 ) ) )
+LOG 1641834308416 [L0]: [Sent at 1641834308416] noop
+LOG 1641834308419 [L0]: [Received at 1641834308419] ( PLAY 36.breakthrough.1641834302839 (( move 2 3 1 4 ) noop ) )
+LOG 1641834308421 [L0]: [Sent at 1641834308421] ( move 7 2 7 1 )
+LOG 1641834308423 [L0]: [Received at 1641834308423] ( STOP 36.breakthrough.1641834302839 (noop ( move 7 2 7 1 ) ) )
+LOG 1641834308424 [L3]: Stopped logging to files at: Mon Jan 10 18:05:08 CET 2022
+LOG 1641834308424 [L3]: LOG SEALED

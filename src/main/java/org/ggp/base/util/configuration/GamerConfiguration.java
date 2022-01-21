@@ -116,9 +116,9 @@ public class GamerConfiguration {
         }
 
         if(runningOnWindows()){
-			defaultLocalGameRepositoryFolderPath = "C:/Users/c.sironi/BITBUCKET REPOS/GGP-Base";
-			gamersSettingsFolderPath = "C:/Users/c.sironi/BITBUCKET REPOS/GGP-Base/GamersSettings";
-			defaultLocalFolderGameRepositoryFolderPath = "C:/Users/c.sironi/BITBUCKET REPOS/GGP-Base/GDLFolder";
+			defaultLocalGameRepositoryFolderPath = "C:/Users/lucsp/git/GGP-Project";
+			gamersSettingsFolderPath = "C:/Users/lucsp/git/GGP-Project/GamersSettings";
+			defaultLocalFolderGameRepositoryFolderPath = "C:/Users/lucsp/git/GGP-Project/GDLFolder";
 
 			// To run the gamers properties from the same folder
 			//defaultLocalGameRepositoryFolderPath = ".";
@@ -133,14 +133,14 @@ public class GamerConfiguration {
 		}else if(runningOnLinux()){
 
 			// GoGeneral + Go4Nature
-			defaultLocalGameRepositoryFolderPath = "/home/csironi/GAMEREPOS"; // Folder with GDL game descriptions
-			gamersSettingsFolderPath = "/home/csironi/GamersSettings"; // Folder with Agent's properties
-			defaultLocalFolderGameRepositoryFolderPath = "/home/csironi/GDLFolder"; // Own games folder
+//			defaultLocalGameRepositoryFolderPath = "/home/csironi/GAMEREPOS"; // Folder with GDL game descriptions
+//			gamersSettingsFolderPath = "/home/csironi/GamersSettings"; // Folder with Agent's properties
+//			defaultLocalFolderGameRepositoryFolderPath = "/home/csironi/GDLFolder"; // Own games folder
 
 			// Aachen
-			//defaultLocalGameRepositoryFolderPath = "/home/cs692591/GAMEREPOS";
-			//gamersSettingsFolderPath = "/home/cs692591/GamersSettings";
-			//defaultLocalFolderGameRepositoryFolderPath = "/home/cs692591/GDLFolder";
+			defaultLocalGameRepositoryFolderPath = "/home/iy353734/GAMEREPOS";
+			gamersSettingsFolderPath = "/home/iy353734/GamersSettings";
+			defaultLocalFolderGameRepositoryFolderPath = "/home/iy353734/GDLFolder";
 
 
 

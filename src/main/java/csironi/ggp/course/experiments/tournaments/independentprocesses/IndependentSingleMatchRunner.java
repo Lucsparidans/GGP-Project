@@ -20,7 +20,6 @@ import org.ggp.base.server.exception.GameServerException;
 import org.ggp.base.util.configuration.GamerConfiguration;
 import org.ggp.base.util.game.Game;
 import org.ggp.base.util.game.GameRepository;
-import org.ggp.base.util.game.ManualUpdateLocalGameRepository;
 import org.ggp.base.util.gdl.grammar.Gdl;
 import org.ggp.base.util.logging.GamerLogger;
 import org.ggp.base.util.match.Match;
@@ -103,12 +102,12 @@ public class IndependentSingleMatchRunner {
 
 		gameKey = args[3];
 
-		//GameRepository gameRepo = GameRepository.getDefaultRepository();
+		GameRepository gameRepo = GameRepository.getDefaultRepository();
 
 		// LINUX
-    	//GameRepository gameRepo = new ManualUpdateLocalGameRepository("/home/csironi/GAMEREPOS/GGPBase-GameRepo-03022016");
+//    	GameRepository gameRepo = new ManualUpdateLocalGameRepository("/home/iy353734/GAMEREPOS");
 
-    	GameRepository gameRepo = new ManualUpdateLocalGameRepository(GamerConfiguration.defaultLocalGameRepositoryFolderPath + "/" + GamerConfiguration./*defaultStanfordRepo*/defaultGGPBaseRepo);
+//    	GameRepository gameRepo = new ManualUpdateLocalGameRepository(GamerConfiguration.defaultLocalGameRepositoryFolderPath + "/" + GamerConfiguration./*defaultStanfordRepo*/defaultGGPBaseRepo);
 
     	Game game = gameRepo.getGame(gameKey);
 

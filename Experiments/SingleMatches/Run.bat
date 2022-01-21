@@ -1,0 +1,1 @@
+java -jar RunIndependentSingleMatches.jar C:\Users\lucsp\git\GGP-Project\Experiments\SingleMatches\Results 1 0 TicTacToe 30 30 1000 false false MctsGamer-SAPPA.properties MctsGamer-SAPPA.properties
